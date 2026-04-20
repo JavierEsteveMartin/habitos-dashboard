@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hábitos</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#08080f;
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:#fff;padding:40px 20px;gap:40px;
+}
+h1{font-size:.75rem;font-weight:400;letter-spacing:5px;color:#444;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px}
+.card{display:flex;flex-direction:column;align-items:center;gap:12px}
+.ring{position:relative;width:150px;height:150px}
+svg{transform:rotate(-90deg)}
+.track{stroke:#141420}
+.arc{stroke-linecap:round;transition:stroke-dasharray .9s cubic-bezier(.4,0,.2,1)}
+.inner{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px
+}
+.num{font-size:2.6rem;font-weight:700;letter-spacing:-1px;line-height:1}
+.unit{font-size:.6rem;letter-spacing:3px;color:#555;text-transform:uppercase}
+.name{font-size:.8rem;letter-spacing:1px;color:#666}
+footer{font-size:.65rem;color:#333;letter-spacing:1px}
+</style>
+</head>
+<body>
+<h1>Rachas · Hábitos</h1>
+<div class="grid">
+<div class="card">
+  <div class="ring">
+    <svg width="150" height="150" viewBox="0 0 150 150">
+      <defs>
+        <linearGradient id="g0" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#7c3aed"/>
+          <stop offset="100%" stop-color="#c4b5fd"/>
+        </linearGradient>
+      </defs>
+      <circle class="track" cx="75" cy="75" r="56" fill="none" stroke-width="9"/>
+      <circle class="arc"   cx="75" cy="75" r="56" fill="none"
+              stroke="url(#g0)" stroke-width="9"
+              data-v="0.0" style="stroke-dasharray:0 352"/>
+    </svg>
+    <div class="inner">
+      <span class="num">0</span>
+      <span class="unit">días</span>
+    </div>
+  </div>
+  <span class="name">⛪ God</span>
+</div><div class="card">
+  <div class="ring">
+    <svg width="150" height="150" viewBox="0 0 150 150">
+      <defs>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#0e7490"/>
+          <stop offset="100%" stop-color="#67e8f9"/>
+        </linearGradient>
+      </defs>
+      <circle class="track" cx="75" cy="75" r="56" fill="none" stroke-width="9"/>
+      <circle class="arc"   cx="75" cy="75" r="56" fill="none"
+              stroke="url(#g1)" stroke-width="9"
+              data-v="0.0" style="stroke-dasharray:0 352"/>
+    </svg>
+    <div class="inner">
+      <span class="num">0</span>
+      <span class="unit">días</span>
+    </div>
+  </div>
+  <span class="name">🏀 BBall</span>
+</div><div class="card">
+  <div class="ring">
+    <svg width="150" height="150" viewBox="0 0 150 150">
+      <defs>
+        <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#be123c"/>
+          <stop offset="100%" stop-color="#fda4af"/>
+        </linearGradient>
+      </defs>
+      <circle class="track" cx="75" cy="75" r="56" fill="none" stroke-width="9"/>
+      <circle class="arc"   cx="75" cy="75" r="56" fill="none"
+              stroke="url(#g2)" stroke-width="9"
+              data-v="0.0" style="stroke-dasharray:0 352"/>
+    </svg>
+    <div class="inner">
+      <span class="num">0</span>
+      <span class="unit">días</span>
+    </div>
+  </div>
+  <span class="name">🫡 Sé un hombre</span>
+</div><div class="card">
+  <div class="ring">
+    <svg width="150" height="150" viewBox="0 0 150 150">
+      <defs>
+        <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#15803d"/>
+          <stop offset="100%" stop-color="#86efac"/>
+        </linearGradient>
+      </defs>
+      <circle class="track" cx="75" cy="75" r="56" fill="none" stroke-width="9"/>
+      <circle class="arc"   cx="75" cy="75" r="56" fill="none"
+              stroke="url(#g3)" stroke-width="9"
+              data-v="0.0" style="stroke-dasharray:0 352"/>
+    </svg>
+    <div class="inner">
+      <span class="num">0</span>
+      <span class="unit">días</span>
+    </div>
+  </div>
+  <span class="name">🏋️ Gym</span>
+</div>
+</div>
+<footer>actualizado 21/04/2026 00:29</footer>
+<script>
+requestAnimationFrame(()=>{
+  document.querySelectorAll('.arc').forEach(a=>{
+    const v=a.dataset.v;
+    setTimeout(()=>{a.style.strokeDasharray=v+' 352'},50);
+  });
+});
+</script>
+</body>
+</html>
